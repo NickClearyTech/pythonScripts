@@ -1,0 +1,12 @@
+Files in csv but not in folder:
+
+Files in folder, but not in csv:
+
+	#videos
+
+	#videos.
+
+	~$#videos.
+
+	~$videos.
+
