@@ -1,3 +1,6 @@
+'''Takes in a CSV file which lists filenames and a directory. Scans both, and finds which file names are present in one but not the other'''
+
+
 import csv, argparse, os
 
 parser = argparse.ArgumentParser()
