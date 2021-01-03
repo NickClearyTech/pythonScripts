@@ -28,7 +28,6 @@ if os.path.isdir(sourceFolder) and os.path.isdir(destFolder):
         filename = file + ".mp4"
         print("Copying " + filename + "\n")
         os.system('copy "' + os.path.join(sourceFolder, filename) + '" "' + os.path.join(destFolder, filename) + '"')
-        #shutil.copyfile(os.path.join(sourceFolder, filename), os.path.join(destFolder, filename))
         print("Copied " + filename + "\n")
 else:
     print("One or both of folders specified are not valid!")
