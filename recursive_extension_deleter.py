@@ -1,5 +1,7 @@
 import os, argparse
+
 parser = argparse.ArgumentParser()
+
 
 def parse_folder(folder_path: str, extension: str):
     current_folder_path = folder_path
@@ -16,7 +18,9 @@ def parse_folder(folder_path: str, extension: str):
 
 
 parser.add_argument("FolderPath", help="The path to the folder to scan the files in")
-parser.add_argument("FileExtension", help="The extension of the files you want to delete")
+parser.add_argument(
+    "FileExtension", help="The extension of the files you want to delete"
+)
 args = parser.parse_args()
 location = args.FolderPath
 extension = args.FileExtension
@@ -26,4 +30,3 @@ if not os.path.isdir(location):
     exit(1)
 
 parse_folder(location, extension)
-

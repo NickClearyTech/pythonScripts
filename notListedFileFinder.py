@@ -1,4 +1,4 @@
-'''Takes in a CSV file which lists filenames and a directory. Scans both, and finds which file names are present in one but not the other'''
+"""Takes in a CSV file which lists filenames and a directory. Scans both, and finds which file names are present in one but not the other"""
 
 
 import csv, argparse, os
@@ -14,7 +14,7 @@ csvFiles = []
 filesPresent = []
 
 if os.path.isdir(Folder):
-    with open(CSVFile, mode='r') as csv_file:
+    with open(CSVFile, mode="r") as csv_file:
         csv_reader = csv.DictReader(csv_file)
         for row in csv_reader:
             csvFiles.append(row["Name"].lower())
@@ -23,11 +23,11 @@ if os.path.isdir(Folder):
     print("Files in csv but not in folder:\n")
     for name in csvFiles:
         if name not in filesPresent:
-            print('\t' + name + '\n')
+            print("\t" + name + "\n")
     print("Files in folder, but not in csv:\n")
     for file in filesPresent:
         if file not in csvFiles:
-            print('\t' + file + '\n')
+            print("\t" + file + "\n")
 else:
     print("That is not a valid path!\n")
     exit(1)

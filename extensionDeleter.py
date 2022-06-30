@@ -1,9 +1,17 @@
 import os, argparse
+
 parser = argparse.ArgumentParser()
 
 parser.add_argument("FolderPath", help="The path to the folder to scan the files in")
-parser.add_argument("FileExtension", help="The extension of the files you want to delete")
-parser.add_argument("-s", "--silent", help="Do not require confirmation to delete files", action="store_true")
+parser.add_argument(
+    "FileExtension", help="The extension of the files you want to delete"
+)
+parser.add_argument(
+    "-s",
+    "--silent",
+    help="Do not require confirmation to delete files",
+    action="store_true",
+)
 args = parser.parse_args()
 location = args.FolderPath
 extension = args.FileExtension
@@ -22,7 +30,7 @@ if os.path.isdir(location):
     if not args.silent:
         print("Here's all the files to be deleted:\n")
         for file in filenames:
-            print("\t"+file+"\n")
+            print("\t" + file + "\n")
         print("Are you sure you want to delete them all? Y for yes, N for no.")
         response = input()
     if response == "y" or response == "Y" or args.silent:
